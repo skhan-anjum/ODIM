@@ -23,19 +23,19 @@ import (
 	"strconv"
 	"strings"
 	"time"
-	"context"
+//	"context"
 
 	"github.com/ODIM-Project/ODIM/lib-utilities/config"
 	"github.com/ODIM-Project/ODIM/lib-utilities/errors"
 	"github.com/gomodule/redigo/redis"
-	redisSentinel "github.com/go-redis/redis/v8"
+	redisSentinel "github.com/go-redis/redis"
 )
 
 const (
 	errorCollectingData string = "error while trying to collect data: "
 	count               int    = 1000
 )
-var ctx = context.Background()
+//var ctx = context.Background()
 func sentinelNewClient(host string) *redisSentinel.SentinelClient{
     rdb := redisSentinel.NewSentinelClient(&redisSentinel.Options{
 //        Addr:     "my-release-redis:26379",
@@ -52,7 +52,7 @@ func sentinelNewClient(host string) *redisSentinel.SentinelClient{
 func GetCurrentMasterHostPort(host string) (string, string) {
 
        sentinelClient := sentinelNewClient(host)
-       result := sentinelClient.GetMasterAddrByName(ctx, "mymaster")
+       result := sentinelClient.GetMasterAddrByName("mymaster")
        strings := result.Val()
        masterIP := strings[0]
        masterPort := strings[1]
