@@ -36,4 +36,8 @@ type ConnPool struct {
 	// pool field is private(starting with small letter) so won't be
 	// visible to outside wrapper package
 	pool *redis.Pool
+        ReadPool *redis.Pool
+        WritePool *redis.Pool
+	MasterIP string
+
 }
