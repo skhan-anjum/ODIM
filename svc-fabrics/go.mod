@@ -9,3 +9,4 @@ require (
 	github.com/stretchr/testify v1.5.1
 	gotest.tools v2.2.0+incompatible
 )
+replace google.golang.org/grpc => google.golang.org/grpc v1.26.0
