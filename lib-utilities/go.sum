@@ -33,8 +33,11 @@ github.com/ODIM-Project/ODIM/lib-persistence-manager v0.0.0-20200805143823-7bb5a
 github.com/ODIM-Project/ODIM/lib-persistence-manager v0.0.0-20200805143823-7bb5a63c60be/go.mod h1:NyEEh6a2bgEXock1ThrXDLnp2A5syxleqSGmWwucPPA=
 github.com/ODIM-Project/ODIM/lib-persistence-manager v0.0.0-20200808043506-60da663c3133 h1:eadqqJRZjsTg1wtaYD3WNgqrvXL2y5iUQRiHXMilggk=
 github.com/ODIM-Project/ODIM/lib-persistence-manager v0.0.0-20200808043506-60da663c3133/go.mod h1:qWM8R7v8RWYi48Y4CjJiew0ndKaYk8dgw9hYQmdd6iE=
+github.com/ODIM-Project/ODIM/lib-persistence-manager v0.0.0-20200809094501-2cf1892f9897 h1:wUGdoUuLGeA/1iMUoThLmYphEh4OUkccKBw5RdREUc8=
+github.com/ODIM-Project/ODIM/lib-persistence-manager v0.0.0-20200809094501-2cf1892f9897/go.mod h1:G68D0WmORb/aGoIwwnSZwHcbLFsqAYLolS0R05svOrU=
 github.com/ODIM-Project/ODIM/lib-utilities v0.0.0-20200727091052-cb7db65624ce/go.mod h1:kvWozdwrn+nfJmxQB5o2hruNU4K2c0CLn5r5UrdJp/M=
 github.com/ODIM-Project/ODIM/lib-utilities v0.0.0-20200808043222-4a22b7818b35/go.mod h1:7kBrb/pLtS0CBb0IIklPik5Wv29SxTdWrrj14rWOvJA=
+github.com/ODIM-Project/ODIM/lib-utilities v0.0.0-20200809093149-80a1a9247bb2/go.mod h1:bYzlWfJoKbYZlsYYdHHgj9W1C9VTEDYrCizmlBjNAi0=
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
 github.com/OpenDNS/vegadns2client v0.0.0-20180418235048-a3fa4a771d87/go.mod h1:iGLljf5n9GjT6kc0HBvyI1nOKnGQbNB66VzSNbK5iks=
 github.com/Shopify/goreferrer v0.0.0-20181106222321-ec9c9a553398 h1:WDC6ySpJzbxGWFh4aMxFFC28wwGp5pEuoTtvA4q/qQ4=
