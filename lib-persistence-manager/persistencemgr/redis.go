@@ -418,8 +418,9 @@ func (p *ConnPool) AddResourceData(table, key string, data interface{}) *errors.
 // Ping will check the DB connection health
 func (p *ConnPool) Ping() error {
 	readConn := p.ReadPool.Get()
-	WriteConn := p.WritePool.Get()
-	defer conn.Close()
+	riteConn := p.WritePool.Get()
+	defer readConn.Close()
+	defer writeConn.Close()
 	if _, err := readConn.Do("PING"); err != nil {
 		return fmt.Errorf("error while pinging DB with read connection")
 	}
