@@ -27,12 +27,15 @@ github.com/Joker/hpp v1.0.0/go.mod h1:8x5n+M1Hp5hC0g8okX3sR3vFQwynaX/UgSOM9MeBKz
 github.com/Microsoft/go-winio v0.4.14/go.mod h1:qXqCSQ3Xa7+6tgxaGTIe4Kpcdsi+P8jBhyzoq1bpyYA=
 github.com/Microsoft/hcsshim v0.8.6/go.mod h1:Op3hHsoHPAvb6lceZHDtd9OkTew38wNoXnJs8iY7rUg=
 github.com/ODIM-Project/ODIM/lib-persistence-manager v0.0.0-20200805143823-7bb5a63c60be/go.mod h1:NyEEh6a2bgEXock1ThrXDLnp2A5syxleqSGmWwucPPA=
+github.com/ODIM-Project/ODIM/lib-persistence-manager v0.0.0-20200808043506-60da663c3133/go.mod h1:qWM8R7v8RWYi48Y4CjJiew0ndKaYk8dgw9hYQmdd6iE=
 github.com/ODIM-Project/ODIM/lib-utilities v0.0.0-20200727091052-cb7db65624ce h1:mcZTZwDY8z9XtWBLP/f1k2GZKW9KOc8zbuaGDKg2PqQ=
 github.com/ODIM-Project/ODIM/lib-utilities v0.0.0-20200727091052-cb7db65624ce/go.mod h1:kvWozdwrn+nfJmxQB5o2hruNU4K2c0CLn5r5UrdJp/M=
 github.com/ODIM-Project/ODIM/lib-utilities v0.0.0-20200807091621-46f90b82095e h1:x9UD2dB4P3BpozjkHgnY3CkMTQEsS6ciumOuvtT4PcQ=
 github.com/ODIM-Project/ODIM/lib-utilities v0.0.0-20200807091621-46f90b82095e/go.mod h1:0prGeHDl9Tyis4M3Zz8Qfk/8OxYfzRCO1LKmoxxIR8Y=
 github.com/ODIM-Project/ODIM/lib-utilities v0.0.0-20200808043222-4a22b7818b35 h1:cC9Y8OtTbo6OY9aR3vr1pHuMHTtJhCMQCtB3oMZYUWw=
 github.com/ODIM-Project/ODIM/lib-utilities v0.0.0-20200808043222-4a22b7818b35/go.mod h1:7kBrb/pLtS0CBb0IIklPik5Wv29SxTdWrrj14rWOvJA=
+github.com/ODIM-Project/ODIM/lib-utilities v0.0.0-20200809093149-80a1a9247bb2 h1:l7JjXsyKHabjVD+4/kyiHHiQpSh0tpSLbDL/W3NEy/U=
+github.com/ODIM-Project/ODIM/lib-utilities v0.0.0-20200809093149-80a1a9247bb2/go.mod h1:bYzlWfJoKbYZlsYYdHHgj9W1C9VTEDYrCizmlBjNAi0=
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
 github.com/OpenDNS/vegadns2client v0.0.0-20180418235048-a3fa4a771d87/go.mod h1:iGLljf5n9GjT6kc0HBvyI1nOKnGQbNB66VzSNbK5iks=
 github.com/Shopify/goreferrer v0.0.0-20181106222321-ec9c9a553398/go.mod h1:a1uqRtAwp2Xwc6WNPJEufxJ7fx3npB4UV/JOLmbu5I0=
