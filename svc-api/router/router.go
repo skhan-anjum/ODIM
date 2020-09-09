@@ -222,7 +222,7 @@ func Router() *iris.Application {
 	systems.Post("/{id}/LogServices/{rid}/Actions/LogService.ClearLog", system.GetSystemResource)
 	systems.Get("/{id}/Storage", system.GetSystemResource)
 	systems.Get("/{id}/Storage/{rid}", system.GetSystemResource)
-	systems.Get("/{id}/Storage/{rid}/Volumes", system.GetSystemResource)
+	systems.Get("/{id}/Storage/{rid}/Volumes", system.GetStorageResource)
 	systems.Get("/{id}/Storage/{rid}/Drives", system.GetSystemResource)
 	systems.Get("/{id}/Storage/{rid}/Drives/{rid2}", system.GetSystemResource)
 	systems.Patch("/{id}", system.ChangeBootOrderSettings)
