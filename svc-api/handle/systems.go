@@ -132,38 +132,6 @@ func (sys *SystemRPCs) GetSystemResource(ctx iris.Context) {
 	ctx.Write(resp.Body)
 }
 
-// The method extract the session token,uuid and request url and creates the RPC request.
-// After the RPC call the method will feed the response to the iris
-// and gives out a proper response.
-func (sys *SystemRPCs) GetStorageResource(ctx iris.Context) {
-	req := systemsproto.GetSystemsRequest{
-		SessionToken: ctx.Request().Header.Get("X-Auth-Token"),
-		RequestParam: ctx.Params().Get("id"),
-		ResourceID:   ctx.Params().Get("rid2"),
-		URL:          ctx.Request().RequestURI,
-	}
-	if req.SessionToken == "" {
-		errorMessage := "error: no X-Auth-Token found in request header"
-		log.Println(errorMessage)
-		response := common.GeneralError(http.StatusUnauthorized, response.NoValidSession, errorMessage, nil, nil)
-		ctx.StatusCode(http.StatusUnauthorized) 
-		ctx.JSON(&response.Body)
-		return
-	}
-	resp, err := sys.GetSystemResourceRPC(req)
-	if err != nil {
-		errorMessage := "error:  RPC error:" + err.Error()
-		log.Println(errorMessage)
-		response := common.GeneralError(http.StatusInternalServerError, response.InternalError, errorMessage, nil, nil)
-		ctx.StatusCode(http.StatusInternalServerError) 
-		ctx.JSON(&response.Body)
-		return
-	}
-
-	common.SetResponseHeader(ctx, resp.Header)
-	ctx.StatusCode(int(resp.StatusCode))
-	ctx.Write(resp.Body)
-}
 //ComputerSystemReset resets the indivitual computer systems
 func (sys *SystemRPCs) ComputerSystemReset(ctx iris.Context) {
 	var req interface{}

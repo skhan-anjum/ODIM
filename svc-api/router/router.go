@@ -222,7 +222,11 @@ func Router() *iris.Application {
 	systems.Post("/{id}/LogServices/{rid}/Actions/LogService.ClearLog", system.GetSystemResource)
 	systems.Get("/{id}/Storage", system.GetSystemResource)
 	systems.Get("/{id}/Storage/{rid}", system.GetSystemResource)
+<<<<<<< 510baf85b182ef4465864d0aecd2304adcb3ce59
 	systems.Get("/{id}/Storage/{id2}/Volumes", system.GetSystemResource)
+=======
+	systems.Get("/{id}/Storage/{rid}/Volumes", system.GetStorageResource)
+>>>>>>> Modification to accept values from DB
 	systems.Get("/{id}/Storage/{rid}/Drives", system.GetSystemResource)
 	systems.Get("/{id}/Storage/{rid}/Drives/{rid2}", system.GetSystemResource)
 	systems.Patch("/{id}", system.ChangeBootOrderSettings)
