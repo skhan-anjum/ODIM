@@ -161,9 +161,13 @@ func (ts *TasksRPC) DeleteTask(ctx context.Context, req *taskproto.GetTaskReques
 	rsp.Header["Allow"] = "DELETE"
 	// Critical Logic follows
 	if task.PercentComplete == 100 {
-		ts.deleteCompletedTask(req.TaskID)
-		if err != nil {
-			log.Printf("error while deleting the completed task: %v", err)
+		del_err := ts.deleteCompletedTask(req.TaskID)
+		if del_err != nil {
+   		    log.Printf("error while deleting the completed task: %v", del_err)
+                    rsp.StatusCode = http.StatusInternalServerError
+                    rsp.StatusMessage = response.InternalError
+                    return nil
+                   
 		}
 		rsp.StatusCode = http.StatusNoContent
 		rsp.Body = nil
