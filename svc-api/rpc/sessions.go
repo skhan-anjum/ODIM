@@ -25,7 +25,7 @@ import (
 
 // DoSessionCreationRequest will do the rpc calls for the auth
 func DoSessionCreationRequest(req sessionproto.SessionCreateRequest) (*sessionproto.SessionCreateResponse, error) {
-    conn, err := services.ODIMService.Client(services.AccountSession)
+	conn, err := services.ODIMService.Client(services.AccountSession)
 	if err != nil {
 		return nil, fmt.Errorf("Failed to create client connection: %v", err)
 	}
@@ -42,7 +42,7 @@ func DoSessionCreationRequest(req sessionproto.SessionCreateRequest) (*sessionpr
 
 // DeleteSessionRequest will do the rpc call to delete session
 func DeleteSessionRequest(sessionID, sessionToken string) (*sessionproto.SessionResponse, error) {
-    conn, err := services.ODIMService.Client(services.AccountSession)
+	conn, err := services.ODIMService.Client(services.AccountSession)
 	if err != nil {
 		return nil, fmt.Errorf("Failed to create client connection: %v", err)
 	}
@@ -63,7 +63,7 @@ func DeleteSessionRequest(sessionID, sessionToken string) (*sessionproto.Session
 
 // GetSessionRequest will do the rpc call to get session
 func GetSessionRequest(sessionID, sessionToken string) (*sessionproto.SessionResponse, error) {
-    conn, err := services.ODIMService.Client(services.AccountSession)
+	conn, err := services.ODIMService.Client(services.AccountSession)
 	if err != nil {
 		return nil, fmt.Errorf("Failed to create client connection: %v", err)
 	}
@@ -84,7 +84,7 @@ func GetSessionRequest(sessionID, sessionToken string) (*sessionproto.SessionRes
 
 // GetAllActiveSessionRequest will do the rpc call to get session
 func GetAllActiveSessionRequest(sessionID, sessionToken string) (*sessionproto.SessionResponse, error) {
-    conn, err := services.ODIMService.Client(services.AccountSession)
+	conn, err := services.ODIMService.Client(services.AccountSession)
 	if err != nil {
 		return nil, fmt.Errorf("Failed to create client connection: %v", err)
 	}
@@ -105,7 +105,7 @@ func GetAllActiveSessionRequest(sessionID, sessionToken string) (*sessionproto.S
 
 //GetSessionServiceRequest will do the rpc call to check session
 func GetSessionServiceRequest() (*sessionproto.SessionResponse, error) {
-    conn, err := services.ODIMService.Client(services.AccountSession)
+	conn, err := services.ODIMService.Client(services.AccountSession)
 	if err != nil {
 		return nil, fmt.Errorf("Failed to create client connection: %v", err)
 	}
