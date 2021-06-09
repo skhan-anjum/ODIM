@@ -18,7 +18,6 @@ package rpc
 import (
 	"context"
 	"fmt"
-	"log"
 	accountproto "github.com/ODIM-Project/ODIM/lib-utilities/proto/account"
 	"github.com/ODIM-Project/ODIM/lib-utilities/services"
 )
@@ -26,13 +25,11 @@ import (
 // DoGetAccountServiceRequest defines the RPC call function for
 // the GetAccountService from account-session micro service
 func DoGetAccountServiceRequest(req accountproto.AccountRequest) (*accountproto.AccountResponse, error) {
-    log.Println("GETTING ACCOUNT SERVICE CONNECTION WITH GRPC")
     conn, err := services.ODIMService.Client(services.AccountSession)
 	if err != nil {
 		return nil, fmt.Errorf("Failed to create client connection: %v", err)
 	}
 	defer conn.Close()
-	log.Println("GETTING ACCOUNT SERVICE CONNECTION WITH GRPC AFTER conn close")
 	account := accountproto.NewAccountClient(conn)
 
 	resp, err := account.GetAccountServices(context.TODO(), &req)
