@@ -29,24 +29,24 @@ import (
 )
 
 //GetSessionUserName is a RPC handle to get the session username from the session Token
-func GetSessionUserName(req *sessionproto.SessionRequest)(*sessionproto.SessionUserName, error) {
-    var resp sessionproto.SessionUserName
+func GetSessionUserName(req *sessionproto.SessionRequest) (*sessionproto.SessionUserName, error) {
+	var resp sessionproto.SessionUserName
 	resp.UserName = ""
 	// Validating the session
 	currentSession, err := auth.CheckSessionTimeOut(req.SessionToken)
 	if err != nil {
 		errorMessage := "Unable to authorize session token: " + err.Error()
 		log.Error(errorMessage)
-		return &resp,err
+		return &resp, err
 	}
 
 	if errs := UpdateLastUsedTime(req.SessionToken); errs != nil {
 		errorMessage := "Unable to update last used time of session matching token " + req.SessionToken + ": " + errs.Error()
 		log.Error(errorMessage)
-		return &resp,errs
+		return &resp, errs
 	}
 	resp.UserName = currentSession.UserName
-	return &resp,nil
+	return &resp, nil
 }
 
 // GetSession is a method to get session
