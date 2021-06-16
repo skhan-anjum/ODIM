@@ -373,7 +373,7 @@ func TestGetSessionUserName(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			_,err := GetSessionUserName(tt.args.req)
+			_, err := GetSessionUserName(tt.args.req)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetSessionUserName() error = %v, wantErr %v", err, tt.wantErr)
 			}

@@ -41,7 +41,7 @@ type Account struct{}
 // The function also checks for the session time out of the token
 // which is present in the request.
 func (a *Account) Create(ctx context.Context, req *accountproto.CreateAccountRequest) (*accountproto.AccountResponse, error) {
-    var resp accountproto.AccountResponse
+	var resp accountproto.AccountResponse
 	errorArgs := []response.ErrArgs{
 		response.ErrArgs{
 			StatusMessage: "",
@@ -67,7 +67,7 @@ func (a *Account) Create(ctx context.Context, req *accountproto.CreateAccountReq
 			"Content-type": "application/json; charset=utf-8", // TODO: add all error headers
 		}
 		log.Printf(errorMessage)
-		return &resp,nil
+		return &resp, nil
 	}
 	err := session.UpdateLastUsedTime(req.SessionToken)
 	if err != nil {
@@ -82,7 +82,7 @@ func (a *Account) Create(ctx context.Context, req *accountproto.CreateAccountReq
 			"Content-type": "application/json; charset=utf-8", // TODO: add all error headers
 		}
 		log.Printf(errorMessage)
-		return &resp,nil
+		return &resp, nil
 	}
 
 	acc := account.GetExternalInterface()
@@ -93,13 +93,13 @@ func (a *Account) Create(ctx context.Context, req *accountproto.CreateAccountReq
 		resp.StatusCode = http.StatusInternalServerError
 		resp.StatusMessage = "error while trying marshal the response body for create account: " + jsonErr.Error()
 		log.Printf(resp.StatusMessage)
-		return &resp,nil
+		return &resp, nil
 	}
 	resp.StatusCode = data.StatusCode
 	resp.StatusMessage = data.StatusMessage
 	resp.Header = data.Header
 
-	return &resp,nil
+	return &resp, nil
 }
 
 // GetAllAccounts defines the operations which handles the RPC request response
@@ -109,7 +109,7 @@ func (a *Account) Create(ctx context.Context, req *accountproto.CreateAccountReq
 // The function also checks for the session time out of the token
 // which is present in the request.
 func (a *Account) GetAllAccounts(ctx context.Context, req *accountproto.AccountRequest) (*accountproto.AccountResponse, error) {
-    var resp accountproto.AccountResponse
+	var resp accountproto.AccountResponse
 	errorArgs := []response.ErrArgs{
 		response.ErrArgs{
 			StatusMessage: "",
@@ -135,7 +135,7 @@ func (a *Account) GetAllAccounts(ctx context.Context, req *accountproto.AccountR
 			"Content-type": "application/json; charset=utf-8", // TODO: add all error headers
 		}
 		log.Printf(errorMessage, resp)
-		return &resp,nil
+		return &resp, nil
 	}
 
 	err := session.UpdateLastUsedTime(req.SessionToken)
@@ -150,7 +150,7 @@ func (a *Account) GetAllAccounts(ctx context.Context, req *accountproto.AccountR
 			"Content-type": "application/json; charset=utf-8", // TODO: add all error headers
 		}
 		log.Printf(errorMessage)
-		return &resp,nil
+		return &resp, nil
 	}
 
 	data := account.GetAllAccounts(sess)
@@ -159,13 +159,13 @@ func (a *Account) GetAllAccounts(ctx context.Context, req *accountproto.AccountR
 		resp.StatusCode = http.StatusInternalServerError
 		resp.StatusMessage = "error while trying marshal the response body for get all accounts: " + err.Error()
 		log.Printf(resp.StatusMessage)
-		return &resp,fmt.Errorf(resp.StatusMessage)
+		return &resp, fmt.Errorf(resp.StatusMessage)
 	}
 	resp.StatusCode = data.StatusCode
 	resp.StatusMessage = data.StatusMessage
 	resp.Header = data.Header
 
-	return &resp,err
+	return &resp, err
 }
 
 // GetAccount defines the operations which handles the RPC request response
@@ -175,7 +175,7 @@ func (a *Account) GetAllAccounts(ctx context.Context, req *accountproto.AccountR
 // The function also checks for the session time out of the token
 // which is present in the request.
 func (a *Account) GetAccount(ctx context.Context, req *accountproto.GetAccountRequest) (*accountproto.AccountResponse, error) {
-    var resp accountproto.AccountResponse
+	var resp accountproto.AccountResponse
 	errorArgs := []response.ErrArgs{
 		response.ErrArgs{
 			StatusMessage: "",
@@ -201,7 +201,7 @@ func (a *Account) GetAccount(ctx context.Context, req *accountproto.GetAccountRe
 			"Content-type": "application/json; charset=utf-8", // TODO: add all error headers
 		}
 		log.Printf(errorMessage)
-		return &resp,nil
+		return &resp, nil
 	}
 
 	err := session.UpdateLastUsedTime(req.SessionToken)
@@ -216,7 +216,7 @@ func (a *Account) GetAccount(ctx context.Context, req *accountproto.GetAccountRe
 			"Content-type": "application/json; charset=utf-8", // TODO: add all error headers
 		}
 		log.Printf(errorMessage)
-		return &resp,nil
+		return &resp, nil
 	}
 
 	data := account.GetAccount(sess, req.AccountID)
@@ -231,7 +231,7 @@ func (a *Account) GetAccount(ctx context.Context, req *accountproto.GetAccountRe
 	resp.StatusMessage = data.StatusMessage
 	resp.Header = data.Header
 
-	return &resp,nil
+	return &resp, nil
 }
 
 // GetAccountServices defines the operations which handles the RPC request response
@@ -241,7 +241,7 @@ func (a *Account) GetAccount(ctx context.Context, req *accountproto.GetAccountRe
 // The function also checks for the session time out of the token
 // which is present in the request.
 func (a *Account) GetAccountServices(ctx context.Context, req *accountproto.AccountRequest) (*accountproto.AccountResponse, error) {
-    var resp accountproto.AccountResponse
+	var resp accountproto.AccountResponse
 	errorArgs := []response.ErrArgs{
 		response.ErrArgs{
 			StatusMessage: "",
@@ -267,7 +267,7 @@ func (a *Account) GetAccountServices(ctx context.Context, req *accountproto.Acco
 			"Content-type": "application/json; charset=utf-8", // TODO: add all error headers
 		}
 		log.Printf(errorMessage)
-		return &resp,nil
+		return &resp, nil
 	}
 
 	err := session.UpdateLastUsedTime(req.SessionToken)
@@ -282,7 +282,7 @@ func (a *Account) GetAccountServices(ctx context.Context, req *accountproto.Acco
 			"Content-type": "application/json; charset=utf-8", // TODO: add all error headers
 		}
 		log.Printf(errorMessage)
-		return &resp,nil
+		return &resp, nil
 	}
 
 	data := account.GetAccountService()
@@ -291,13 +291,13 @@ func (a *Account) GetAccountServices(ctx context.Context, req *accountproto.Acco
 		resp.StatusCode = http.StatusInternalServerError
 		resp.StatusMessage = "error while trying marshal the response body for get account details: " + err.Error()
 		log.Printf(resp.StatusMessage)
-		return &resp,fmt.Errorf(resp.StatusMessage)
+		return &resp, fmt.Errorf(resp.StatusMessage)
 	}
 	resp.StatusCode = data.StatusCode
 	resp.StatusMessage = data.StatusMessage
 	resp.Header = data.Header
 
-	return &resp,err
+	return &resp, err
 }
 
 // Update defines the operations which handles the RPC request response
@@ -307,7 +307,7 @@ func (a *Account) GetAccountServices(ctx context.Context, req *accountproto.Acco
 // The function also checks for the session time out of the token
 // which is present in the request.
 func (a *Account) Update(ctx context.Context, req *accountproto.UpdateAccountRequest) (*accountproto.AccountResponse, error) {
-    var resp accountproto.AccountResponse
+	var resp accountproto.AccountResponse
 	errorArgs := []response.ErrArgs{
 		response.ErrArgs{
 			StatusMessage: "",
@@ -333,7 +333,7 @@ func (a *Account) Update(ctx context.Context, req *accountproto.UpdateAccountReq
 			"Content-type": "application/json; charset=utf-8", // TODO: add all error headers
 		}
 		log.Printf(errorMessage)
-		return &resp,nil
+		return &resp, nil
 	}
 
 	err := session.UpdateLastUsedTime(req.SessionToken)
@@ -348,7 +348,7 @@ func (a *Account) Update(ctx context.Context, req *accountproto.UpdateAccountReq
 			"Content-type": "application/json; charset=utf-8", // TODO: add all error headers
 		}
 		log.Printf(errorMessage)
-		return &resp,nil
+		return &resp, nil
 	}
 
 	acc := account.GetExternalInterface()
@@ -359,13 +359,13 @@ func (a *Account) Update(ctx context.Context, req *accountproto.UpdateAccountReq
 		resp.StatusCode = http.StatusInternalServerError
 		resp.StatusMessage = "error while trying to marshal the response body for create account: " + err.Error()
 		log.Printf(resp.StatusMessage)
-		return &resp,nil
+		return &resp, nil
 	}
 	resp.StatusCode = data.StatusCode
 	resp.StatusMessage = data.StatusMessage
 	resp.Header = data.Header
 
-	return &resp,nil
+	return &resp, nil
 }
 
 // Delete defines the operations which handles the RPC request response
@@ -375,7 +375,7 @@ func (a *Account) Update(ctx context.Context, req *accountproto.UpdateAccountReq
 // The function also checks for the session time out of the token
 // which is present in the request.
 func (a *Account) Delete(ctx context.Context, req *accountproto.DeleteAccountRequest) (*accountproto.AccountResponse, error) {
-    var resp accountproto.AccountResponse
+	var resp accountproto.AccountResponse
 	errorArgs := []response.ErrArgs{
 		response.ErrArgs{
 			StatusMessage: "",
@@ -401,7 +401,7 @@ func (a *Account) Delete(ctx context.Context, req *accountproto.DeleteAccountReq
 			"Content-type": "application/json; charset=utf-8", // TODO: add all error headers
 		}
 		log.Printf(errorMessage)
-		return &resp,nil
+		return &resp, nil
 	}
 
 	err := session.UpdateLastUsedTime(req.SessionToken)
@@ -416,7 +416,7 @@ func (a *Account) Delete(ctx context.Context, req *accountproto.DeleteAccountReq
 			"Content-type": "application/json; charset=utf-8", // TODO: add all error headers
 		}
 		log.Printf(errorMessage)
-		return &resp,nil
+		return &resp, nil
 	}
 
 	data := account.Delete(sess, req.AccountID)
@@ -426,11 +426,11 @@ func (a *Account) Delete(ctx context.Context, req *accountproto.DeleteAccountReq
 		resp.StatusCode = http.StatusInternalServerError
 		resp.StatusMessage = "error while trying marshal the response body for delete account: " + jsonErr.Error()
 		log.Printf(resp.StatusMessage)
-		return &resp,nil
+		return &resp, nil
 	}
 	resp.StatusCode = data.StatusCode
 	resp.StatusMessage = data.StatusMessage
 	resp.Header = data.Header
 
-	return &resp,nil
+	return &resp, nil
 }

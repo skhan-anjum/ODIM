@@ -124,7 +124,7 @@ func TestRole_CreateRole(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-		    _, err := tt.r.CreateRole(tt.args.ctx, tt.args.req)
+			_, err := tt.r.CreateRole(tt.args.ctx, tt.args.req)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("Role.CreateRole() error = %v, wantErr %v", err, tt.wantErr)
 			}
@@ -179,7 +179,7 @@ func TestRole_GetRole(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-		    _, err := tt.r.GetRole(tt.args.ctx, tt.args.req)
+			_, err := tt.r.GetRole(tt.args.ctx, tt.args.req)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("Role.GetRole() error = %v, wantErr %v", err, tt.wantErr)
 			}
@@ -233,7 +233,7 @@ func TestRole_GetAllRoles(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-		    _, err := tt.r.GetAllRoles(tt.args.ctx, tt.args.req)
+			_, err := tt.r.GetAllRoles(tt.args.ctx, tt.args.req)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("Role.GetAllRoles() error = %v, wantErr %v", err, tt.wantErr)
 			}
@@ -295,7 +295,7 @@ func TestRole_UpdateRole(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-		    _, err := tt.r.UpdateRole(tt.args.ctx, tt.args.req)
+			_, err := tt.r.UpdateRole(tt.args.ctx, tt.args.req)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("Role.UpdateRole() error = %v, wantErr %v", err, tt.wantErr)
 			}
@@ -359,7 +359,7 @@ func TestRole_DeleteRole(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			resp,err := tt.r.DeleteRole(tt.args.ctx, tt.args.req)
+			resp, err := tt.r.DeleteRole(tt.args.ctx, tt.args.req)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("Role.Delete() error = %v, wantErr %v", err, tt.wantErr)
 			}
