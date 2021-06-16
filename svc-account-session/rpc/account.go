@@ -54,6 +54,7 @@ func (a *Account) Create(ctx context.Context, req *accountproto.CreateAccountReq
 		Message:   "",
 		ErrorArgs: errorArgs,
 	}
+
 	sess, errs := auth.CheckSessionTimeOut(req.SessionToken)
 	if errs != nil {
 		errorMessage := "error while authorizing session token: " + errs.Error()
